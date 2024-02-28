@@ -1,36 +1,32 @@
-<div class="container-fluid">
-  <div class="row align-items-center text-center">
-    <div class="col-md-6">
+<div class="container mx-auto bg-gray-100 p-8">
+  <div class="flex items-center justify-center">
+    <div class="md:w-1/2">
       <img
-        height="100%"
-        width="100%"
         src="assets/images/hugpets.webp"
         alt="Veterinaria"
-        class="img-responsive"
+        class="w-full h-auto rounded-lg"
       />
     </div>
-    <div class="col-md-6">
-      <div class="container mx-auto">
-        <h1 class="text-danger">SOON......</h1>
-        <h1 class="text-center">PetVax Reminder</h1>
-        <p class="text-justify">
-          PetVax Reminder es tu aliado en el cuidado de la salud de tu peludo
-          amigo. Esta aplicación te ayuda a mantener al día las vacunas y
-          controles médicos de tu mascota, enviándote recordatorios oportunos
-          para que nunca te pierdas una cita importante con el veterinario. Con
-          PetVax Reminder, proporcionamos la tranquilidad de saber que estás
-          brindando el mejor cuidado posible a tu compañero peludo, garantizando
-          una vida feliz y saludable. ¡Regístrate ahora y cuida a tu mascota con
-          confianza!
-        </p>
-      </div>
-      <div class="d-flex gap-3 justify-content-center">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal">Iniciar Sesión</button>
-        <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#registerModal">Registrarse</button>
+    <div class="md:w-1/2 md:ml-8">
+      <h1 class="text-4xl text-center font-bold text-red-500 mb-4">SOON......</h1>
+      <h1 class="text-3xl font-semibold text-center mb-4">PetVax Reminder</h1>
+      <p class="text-justify mb-8">
+        PetVax Reminder es tu aliado en el cuidado de la salud de tu peludo
+        amigo. Esta aplicación te ayuda a mantener al día las vacunas y
+        controles médicos de tu mascota, enviándote recordatorios oportunos
+        para que nunca te pierdas una cita importante con el veterinario. Con
+        PetVax Reminder, proporcionamos la tranquilidad de saber que estás
+        brindando el mejor cuidado posible a tu compañero peludo, garantizando
+        una vida feliz y saludable. ¡Regístrate ahora y cuida a tu mascota con
+        confianza!
+      </p>
+      <div class="flex gap-3 justify-center">
+        <p-button (click)="showDialog('login')" label="Iniciar Sesión" icon="pi pi-user"></p-button>
+        <p-button (click)="showDialog('register')" severity="success" label="Registrate" icon="pi pi-plus"></p-button>
       </div>
     </div>
   </div>
 </div>
-<!-- MODALES  -->
 <app-login-modal></app-login-modal>
-<app-register-modal></app-register-modal> 
+<app-register-modal></app-register-modal>
+

@@ -1,25 +1,17 @@
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Contenido del formulario de inicio de sesión -->
-          <form>
-            <div class="mb-3">
-              <label for="username" class="form-label">Usuario</label>
-              <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario">
+<p-dialog header="Iniciar Sesión" [(visible)]="visible" [modal]="true" [style]="{ width: '20vw' }" [draggable]="false" [resizable]="false">
+    <div class="p-4">
+        <form>
+            <div class="mb-4">
+                <input pInputText type="text" placeholder="Usuario" />
+
             </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+
+            <div class="mb-4">
+                <input pInputText id="password" type="password" class="w-12rem"  placeholder="password"/>
             </div>
-            <!-- TODO : EN DESARROLLO  SE QUITARA EL CLICK PARA CUANDO YA SE TENGA EL BACKEND HECHO Y SE USE FORMULARIOS REACTIVOS -->
-            <button  (click)="login()" type="submit" class="btn btn-primary">Iniciar Sesión</button>
-          </form>
-        </div>
-      </div>
+            <div class="flex items-center justify-between">
+                <p-button  label="Submit" [loading]="loading" (onClick)="load()"></p-button>
+            </div>
+        </form>
     </div>
-  </div>
+</p-dialog>
