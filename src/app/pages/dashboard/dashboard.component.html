@@ -5,7 +5,7 @@
       <h1>MIS MASCOTAS</h1>
     </div>
   </header>
-  <section class="flex justify-between">
+  <section id="date_button" class="flex justify-between">
     <div class="pt-3">
       <p-button
         severity="success"
@@ -19,15 +19,15 @@
     </div>
   </section>
   <div class="grid grid-cols-12 gap-2">
-    <section class="col-span-7 ">
-      <div class="grid grid-cols-12 gap-4">
-        <div class="col-span-6 mt-16">
+    <section class="col-span-7 containercards">
+      <div class="flex flex-row flex-wrap gap-x-20 justify-center">
+        <div class="mt-16">
           <a href="" class="no-underline">
             <div class="card flex justify-center">
               <p-card
                 header="Snoopy"
                 subheader="Luchito el mas pro"
-                [style]="{ width: '360px',height:'468px' }"
+                [style]="{ width: '360px', height: '468px' }"
               >
                 <ng-template pTemplate="header">
                   <img
@@ -37,33 +37,33 @@
                   />
                 </ng-template>
                 <div class="overflow-x-auto">
-                    <ul class="p-0 flex flex-wrap gap-2 list-none">
-                        <li class="flex-shrink-0">
-                            <p-chip label="Goku"></p-chip>
-                        </li>
-                        <li class="flex-shrink-0">
-                            <p-chip label="3 años"></p-chip>
-                        </li>
-                        <li class="flex-shrink-0">
-                            <p-chip label="Golden"></p-chip>
-                        </li>
-                        <li class="flex-shrink-0">
-                            <p-chip label="Macho"></p-chip>
-                        </li>
-                    </ul>
+                  <ul class="p-0 flex flex-wrap gap-2 list-none">
+                    <li class="flex-shrink-0">
+                      <p-chip label="Goku"></p-chip>
+                    </li>
+                    <li class="flex-shrink-0">
+                      <p-chip label="3 años"></p-chip>
+                    </li>
+                    <li class="flex-shrink-0">
+                      <p-chip label="Golden"></p-chip>
+                    </li>
+                    <li class="flex-shrink-0">
+                      <p-chip label="Macho"></p-chip>
+                    </li>
+                  </ul>
                 </div>
               </p-card>
             </div>
           </a>
         </div>
         <!-- ... -->
-        <div class="col-span-6 mt-16">
+        <div class="mt-16">
           <a href="" class="no-underline">
             <div class="card flex justify-center">
               <p-card
                 header="Akita"
                 subheader="La cutú"
-                [style]="{ width: '360px',height:'468px'}"
+                [style]="{ width: '360px', height: '468px' }"
               >
                 <ng-template pTemplate="header">
                   <img
@@ -73,20 +73,20 @@
                   />
                 </ng-template>
                 <div class="overflow-x-auto">
-                    <ul class="p-0 flex flex-wrap gap-2 list-none">
-                        <li class="flex-shrink-0">
-                            <p-chip styleClass="my-chip" label="Akita"></p-chip>
-                        </li>
-                        <li class="flex-shrink-0">
-                            <p-chip  label="1 año"></p-chip>
-                        </li>
-                        <li class="flex-shrink-0">
-                            <p-chip label="Pastor Alemán"></p-chip>
-                        </li>
-                        <li class="flex-shrink-0">
-                            <p-chip label="Hembra"></p-chip>
-                        </li>
-                    </ul>
+                  <ul class="p-0 flex flex-wrap gap-2 list-none">
+                    <li class="flex-shrink-0">
+                      <p-chip styleClass="my-chip" label="Akita"></p-chip>
+                    </li>
+                    <li class="flex-shrink-0">
+                      <p-chip label="1 año"></p-chip>
+                    </li>
+                    <li class="flex-shrink-0">
+                      <p-chip label="Pastor Alemán"></p-chip>
+                    </li>
+                    <li class="flex-shrink-0">
+                      <p-chip label="Hembra"></p-chip>
+                    </li>
+                  </ul>
                 </div>
               </p-card>
             </div>
@@ -94,8 +94,10 @@
         </div>
       </div>
     </section>
-    <p-divider class="col-span-1" layout="vertical"></p-divider>
-    <aside class="col-span-4">
+    <div class="divider">
+      <p-divider class="col-span-1" layout="vertical"></p-divider>
+    </div>
+    <aside class="col-span-4 containerreminders">
       <div class="flex justify-center gap-2">
         <div class="w-12">
           <app-idea-icon></app-idea-icon>

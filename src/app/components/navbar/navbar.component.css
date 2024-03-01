@@ -1,0 +1,9 @@
+
+@media screen and (width <= 1024px) {
+    .dropdown{
+        right: 0.1px;
+        width: 300px;
+    }
+    
+}
+

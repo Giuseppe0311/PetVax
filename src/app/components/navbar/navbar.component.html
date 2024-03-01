@@ -7,16 +7,18 @@
 
     <!-- Items del Navbar -->
     <div class="flex space-x-4 align-middle gap-5">
-      <div class="relative group">
+      <div class="group">
+        <div class="relative">
         <i
           class="pi pi-bell text-3xl cursor-pointer"
           pBadge
           value="2"
           (click)="toggleDropdown()"
         ></i>
+      </div>
         @if (mostrarDropdown) {
         <div
-          class="w-96 absolute bg-gray-100 top-20 right-0.5 z-10 backdrop-filter backdrop-blur-md rounded-md p-2"
+          class="w-96 absolute bg-gray-100 top-24 right-5 z-10 backdrop-filter backdrop-blur-md rounded-md p-2 dropdown"
         >
           <div class="flex flex-col justify-centertext-black">
             <!-- Contenido del dropdown -->

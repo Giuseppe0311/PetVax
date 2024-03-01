@@ -2,3 +2,20 @@
     background-color: green !important;
     color: white;
 }
+@media screen and (width <= 1024px) {
+    #date_button {
+      flex-direction: column;
+      padding-left: 5px;
+    }
+    .containercards{
+        grid-column:span 12 / span 12;
+
+    }
+    .containerreminders{
+        grid-column:span 12 / span 12;
+        padding-top: 25px;
+    }
+    .divider{
+       display: none;
+    }
+  }
