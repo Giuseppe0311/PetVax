@@ -12,11 +12,21 @@ import { MessagesModule } from 'primeng/messages';
 })
 export class NavbarComponent {
   mostrarDropdown: boolean = false;
+  mostrarDropdownavatar : boolean = false;
   toggleDropdown() {
+    this.mostrarDropdownavatar = false
     this.mostrarDropdown = !this.mostrarDropdown;
     // mostrar por 5 segundos
     setTimeout(() => {
       this.mostrarDropdown = false;
+    }, 8000);
+  }
+  toggleDropdownavatar() {
+    this.mostrarDropdown = false
+    this.mostrarDropdownavatar = !this.mostrarDropdownavatar;
+    // mostrar por 5 segundos
+    setTimeout(() => {
+      this.mostrarDropdownavatar = false;
     }, 8000);
   }
 }

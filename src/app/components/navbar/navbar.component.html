@@ -9,13 +9,13 @@
     <div class="flex space-x-4 align-middle gap-5">
       <div class="group">
         <div class="relative">
-        <i
-          class="pi pi-bell text-3xl cursor-pointer"
-          pBadge
-          value="2"
-          (click)="toggleDropdown()"
-        ></i>
-      </div>
+          <i
+            class="pi pi-bell text-3xl cursor-pointer"
+            pBadge
+            value="2"
+            (click)="toggleDropdown()"
+          ></i>
+        </div>
         @if (mostrarDropdown) {
         <div
           class="w-96 absolute bg-gray-100 top-24 right-5 z-10 backdrop-filter backdrop-blur-md rounded-md p-2 dropdown"
@@ -28,16 +28,24 @@
                 <div class="card">
                   <p-messages severity="info">
                     <ng-template pTemplate>
-                        <div class="ml-2">Te recordamos que el próximo <strong>viernes 17 de septiembre</strong> es la fecha de vacunación de tu perrita Snoopy.</div>
+                      <div class="ml-2">
+                        Te recordamos que el próximo
+                        <strong>viernes 17 de septiembre</strong> es la fecha de
+                        vacunación de tu perrita Snoopy.
+                      </div>
                     </ng-template>
-                </p-messages>
+                  </p-messages>
                 </div>
                 <div class="card">
                   <p-messages severity="info">
                     <ng-template pTemplate>
-                        <div class="ml-2">Te recordamos que el próximo <strong>viernes 17 de septiembre</strong> es la fecha de vacunación de tu perrita Akita.</div>
+                      <div class="ml-2">
+                        Te recordamos que el próximo
+                        <strong>viernes 17 de septiembre</strong> es la fecha de
+                        vacunación de tu perrita Akita.
+                      </div>
                     </ng-template>
-                </p-messages>
+                  </p-messages>
                 </div>
               </div>
             </ul>
@@ -46,11 +54,33 @@
         }
       </div>
       <!-- modal de notificaciones -->
-      <p-avatar
-        size="large"
-        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
-        value="4"
-      ></p-avatar>
+      <div class="inline-block text-left">
+        <p-avatar
+          class="cursor-pointer relative"
+          size="large"
+          image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+          value="4"
+          (click)="toggleDropdownavatar()"
+        ></p-avatar>
+        @if (mostrarDropdownavatar) {
+        <div
+          class="top-20 absolute right-5 mt-2 rounded-md shadow-lg bg-green-100 ring-1 ring-black ring-opacity-5 focus:outline-none"
+        >
+          <a
+            href="#"
+            class="no-underline block px-2 py-2 text-sm text-gray-700 hover:text-blue-500"
+          >
+            <div class="flex flex-row-reverse gap-2 justify-center items-center">
+              <div>
+                <i class="pi pi-pencil"></i>
+              </div>
+              <span>Editar Perfil</span>
+            </div>
+          </a>
+          <!-- Agrega más elementos de menú según sea necesario -->
+        </div>
+        }
+      </div>
     </div>
   </div>
 </nav>
