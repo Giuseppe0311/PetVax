@@ -1,0 +1,54 @@
+<nav class="bg-white shadow-md p-4 relative">
+  <div class="container mx-auto flex justify-between items-center">
+    <!-- Logo o Título -->
+    <a href="#" class="text-purple-400 text-lg font-semibold no-underline"
+      >PetVax Reminder</a
+    >
+
+    <!-- Items del Navbar -->
+    <div class="flex space-x-4 align-middle gap-5">
+      <div class="relative group">
+        <i
+          class="pi pi-bell text-3xl cursor-pointer"
+          pBadge
+          value="2"
+          (click)="toggleDropdown()"
+        ></i>
+        @if (mostrarDropdown) {
+        <div
+          class="w-96 absolute bg-gray-100 top-20 right-0.5 z-10 backdrop-filter backdrop-blur-md rounded-md p-2"
+        >
+          <div class="flex flex-col justify-centertext-black">
+            <!-- Contenido del dropdown -->
+            <p class="text-center">Notificaciones</p>
+            <ul class="list-none p-0">
+              <div class="flex flex-col">
+                <div class="card">
+                  <p-messages severity="info">
+                    <ng-template pTemplate>
+                        <div class="ml-2">Te recordamos que el próximo <strong>viernes 17 de septiembre</strong> es la fecha de vacunación de tu perrita Snoopy.</div>
+                    </ng-template>
+                </p-messages>
+                </div>
+                <div class="card">
+                  <p-messages severity="info">
+                    <ng-template pTemplate>
+                        <div class="ml-2">Te recordamos que el próximo <strong>viernes 17 de septiembre</strong> es la fecha de vacunación de tu perrita Akita.</div>
+                    </ng-template>
+                </p-messages>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+        }
+      </div>
+      <!-- modal de notificaciones -->
+      <p-avatar
+        size="large"
+        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+        value="4"
+      ></p-avatar>
+    </div>
+  </div>
+</nav>

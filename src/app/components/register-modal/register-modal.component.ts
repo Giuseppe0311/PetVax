@@ -1,56 +1,66 @@
 import { Component } from '@angular/core';
 import { DialogModule } from 'primeng/dialog';
 import { DialogCommunicationServiceService } from '../../service/dialog-communication-service.service';
-import { StepsModule } from 'primeng/steps';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { ButtonModule } from 'primeng/button';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { ToastModule } from 'primeng/toast';
-import { MenuItem,MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-register-modal',
   standalone: true,
-  imports: [DialogModule,StepsModule,ToastModule],
+  imports: [
+    DialogModule,
+    InputTextModule,
+    PasswordModule,
+    InputNumberModule,
+    ButtonModule,
+    ToastModule,
+  ],
   templateUrl: './register-modal.component.html',
   styleUrl: './register-modal.component.css',
-  providers:[MessageService]
+  providers: [MessageService],
 })
 export class RegisterModalComponent {
   visible: boolean = false;
-  modalName : string = 'register'
-  items: MenuItem[] =[];
-  activeIndex: number = 0;
-  constructor(private dialogService: DialogCommunicationServiceService, private messageService: MessageService) {}
-  onActiveIndexChange(event: number) {
-    this.activeIndex = event;
-}
-  
+  modalName: string = 'register';
+  loading = false;
+
+  constructor(
+    private dialogService: DialogCommunicationServiceService,
+    private messageService: MessageService
+  ) {}
 
   ngOnInit(): void {
-    this.items = [
-      {
-          label: 'Personal',
-          command: (event: any) => this.messageService.add({severity:'info', summary:'First Step', detail: event.item.label})
-      },
-      {
-          label: 'Seat',
-          command: (event: any) => this.messageService.add({severity:'info', summary:'Second Step', detail: event.item.label})
-      },
-      {
-          label: 'Payment',
-          command: (event: any) => this.messageService.add({severity:'info', summary:'Third Step', detail: event.item.label})
-      },
-      {
-          label: 'Confirmation',
-          command: (event: any) => this.messageService.add({severity:'info', summary:'Last Step', detail: event.item.label})
-      }
-  ];
-    this.dialogService.showDialog$.subscribe((requestName:String) => {
-     if (requestName === this.modalName) {
-       this.visible = true;
-       // Puedes agregar más lógica aquí según tus necesidades
-     }else{
+    this.dialogService.showDialog$.subscribe((requestName: String) => {
+      if (requestName === this.modalName) {
+        this.visible = true;
+        // Puedes agregar más lógica aquí según tus necesidades
+      } else {
         this.visible = false;
-     }
+      }
     });
-    
   }
+  load() {
+    this.loading = true;
+
+    setTimeout(() => {
+      this.loading = false;
+      this.show();
+      this.showInfo();
+    }, 3000);
+  }
+
+  show() {
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Success',
+      detail: 'Registrado Correctamente',
+    });
+  }
+  showInfo() {
+    this.messageService.add({ severity: 'info', summary: 'Info', detail: 'Ya puedes iniciar Sesion' });
+}
 }
