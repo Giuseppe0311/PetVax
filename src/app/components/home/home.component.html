@@ -1,15 +1,11 @@
-<div class="container mx-auto bg-gray-100 p-8">
-  <div class="flex items-center justify-center">
-    <div class="md:w-1/2">
-      <img
-        src="assets/images/hugpets.webp"
-        alt="Veterinaria"
-        class="w-full h-auto rounded-lg"
-      />
-    </div>
-    <div class="md:w-1/2 md:ml-8">
-      <h1 class="text-4xl text-center font-bold text-red-500 mb-4">SOON......</h1>
-      <a href="/dashboard">OBSERVA COMO QUEDARÁ EL DASHBOARD AQUI</a>
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+  <div class="w-full max-w-screen-md p-8 bg-white rounded-md shadow-md">
+    <div class="md:w-1/2 md:mx-auto">
+      <div class="text-center">
+        <i class="fas fa-dog text-5xl text-red-500 mb-4"></i>
+        <h1 class="text-4xl font-bold mb-4">Próximamente...</h1>
+        <a href="/dashboard" class="block text-center text-blue-500 mb-4">¡Observa cómo quedará el Dashboard aquí!</a>
+      </div>
       <h1 class="text-3xl font-semibold text-center mb-4">PetVax Reminder</h1>
       <p class="text-justify mb-8">
         PetVax Reminder es tu aliado en el cuidado de la salud de tu peludo
@@ -21,13 +17,13 @@
         una vida feliz y saludable. ¡Regístrate ahora y cuida a tu mascota con
         confianza!
       </p>
-      <div class="flex gap-3 justify-center">
-        <p-button (click)="showDialog('login')" label="Iniciar Sesión" icon="pi pi-user"></p-button>
-        <p-button (click)="showDialog('register')" severity="success" label="Registrate" icon="pi pi-plus"></p-button>
+      <div class="flex gap-2 justify-center">
+        <p-button [text]="true" (click)="showDialog('login')" label="Iniciar Sesión"></p-button>
+        <p-button   [text]="true" (click)="showDialog('register')" severity="success" label="Regístrate"></p-button>
+
       </div>
     </div>
   </div>
 </div>
 <app-login-modal></app-login-modal>
 <app-register-modal></app-register-modal>
-
